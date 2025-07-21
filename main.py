@@ -20,8 +20,17 @@ class Node:
 
 
 def shuffle(head):
-    # Your solution here!
-    pass
+    if not head:
+        return None
+    if not head.next:
+        return head
+    
+    placeholder = head
+    placeholder_next_next = head.next.next
+    head = head.next
+    head.next = placeholder
+    placeholder.next = shuffle(placeholder_next_next)
+    return head
 
 
 # Input: a->b->c->d->e->f
