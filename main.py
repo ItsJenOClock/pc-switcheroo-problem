@@ -20,9 +20,7 @@ class Node:
 
 
 def shuffle(head):
-    if not head:
-        return None
-    if not head.next:
+    if not head or not head.next:
         return head
     
     placeholder = head
